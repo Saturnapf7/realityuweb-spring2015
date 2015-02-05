@@ -88,7 +88,7 @@ public class GroupsDAO implements DAO {
 				<!--======================================== */
 				//Adding To The Database
 				grp.setmarriageChoice(rs.getString("marriageChoice"));
-				grp.setStudentAccessCode(rs.getString("coordinatorCode"));
+				grp.setcoordinatorCode(rs.getString("coordinatorCode"));
 				
 				lstGroup.add(grp);
 			}
