@@ -4,7 +4,6 @@ package servlet;
  *  4/28/2014
  ********************************************************************/
 import java.util.ArrayList;
-
 import java.util.List;
 import java.io.IOException;
 
@@ -102,10 +101,27 @@ public class ProcessAllSurveysServlet extends HttpServlet {
                 ses1.setAttribute("isProcessed", isProcessed);
                 System.out.println("Group added to Session for 'opengroup.jsp' & isProcessed = "+isProcessed);
 	    		
-	            //Forward confirmation page
-	            RequestDispatcher rd = getServletContext().getRequestDispatcher("/opengroup.jsp");
-	            rd.forward(request, response);
-	            System.out.println("Surveys PROCESSED.");
+	            //Finding out where this servlet is called from sending user to correct page
+                String referUrl = request.getHeader("Referer");
+    			String[] splitUrl = referUrl.split("/");
+    			String sentFromPage = splitUrl[splitUrl.length-1];
+    			System.out.println(sentFromPage);
+                
+    			//Admin
+    			if (sentFromPage.equals("opengroup.jsp") || sentFromPage.equals("NewGroupServlet")) {
+    				//Forward confirmation page
+    	            RequestDispatcher rd = getServletContext().getRequestDispatcher("/opengroup.jsp");
+    	            rd.forward(request, response);
+    	            System.out.println("***** GONE TO ADMIN *****");
+    			}
+    			//Coordinator
+                if (sentFromPage.equals("CoordinatorOpenGroup.jsp") || sentFromPage.equals("CoordinatorOpenGroup") || sentFromPage.equals("CoordinatorGroupServlet")) {
+                	//Forward confirmation page
+    	            RequestDispatcher rd = getServletContext().getRequestDispatcher("/CoordinatorOpenGroup.jsp");
+    	            rd.forward(request, response);
+    	            System.out.println("***** GONE TO COORDINATOR *****");
+                }
+                System.out.println("Surveys PROCESSED.");
             
          	} //end if
 

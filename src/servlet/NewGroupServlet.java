@@ -63,29 +63,39 @@ public class NewGroupServlet extends HttpServlet {
         List<Survey> lstSurveys = new ArrayList<Survey>();
         SurveysDAO sd = new SurveysDAO();
 
-        year=(request.getParameter("seYear"));
-        month=(request.getParameter("seMonth"));
-        day=(request.getParameter("seDay"));
-        ssyear=(request.getParameter("ssYear"));
-        ssmonth=(request.getParameter("ssMonth"));
-        ssday=(request.getParameter("ssDay"));
-        edyear=(request.getParameter("edYear"));
-        edmonth=(request.getParameter("edMonth"));
-        edday=(request.getParameter("edDay"));
+        //Checking to see if the Admin is editing a group
+        //since 1 string per date is sent in if the group is being edited
+        //If not then separate date values are sent in for a new group
+        if (request.getParameter("editGroup") != null) {
+        	surveyStartDate=cleanupString(request.getParameter("surveyStartDate"));
+        	surveyEndDate=cleanupString(request.getParameter("surveyEndDate"));
+        	eventDate=cleanupString(request.getParameter("eventDate"));
+        	
+        	System.out.println(surveyStartDate);
+            System.out.println(surveyEndDate);  
+            System.out.println(eventDate);
+        } else {
+        	year=(request.getParameter("seYear"));
+            month=(request.getParameter("seMonth"));
+            day=(request.getParameter("seDay"));
+            ssyear=(request.getParameter("ssYear"));
+            ssmonth=(request.getParameter("ssMonth"));
+            ssday=(request.getParameter("ssDay"));
+            edyear=(request.getParameter("edYear"));
+            edmonth=(request.getParameter("edMonth"));
+            edday=(request.getParameter("edDay"));       
+            
+            System.out.println(year);
+            System.out.println(month);  
+            System.out.println(day);    
         
+            //assigns the dates 
+            surveyStartDate=ssmonth+("/")+ssday+("/")+ssyear;
+            surveyEndDate=month+("/")+day+("/")+year;
+            eventDate=edmonth+("/")+edday+("/")+edyear;
+        }
         
-       System.out.println(year);
-       System.out.println(month);  
-       System.out.println(day);    
-    
-    //assigns the dates 
-       surveyStartDate=ssmonth+("/")+ssday+("/")+ssyear;
-       surveyEndDate=month+("/")+day+("/")+year;
-       eventDate=edmonth+("/")+edday+("/")+edyear;
-        
-        
-        try {
-        
+        try {      
              
         	//Clear form data if "clear" button clicked -- OR -- if parameters don't exist (groupid is from 'opengroup.jsp' 
         	//page so know it's not coming from that page which doesn't have a "clear" function
