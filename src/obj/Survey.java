@@ -403,6 +403,35 @@ public class Survey {
 	            return found;
 	        } //end validateLogin
 	        
+	        //Return a GPA category value based on student GPA
+	        public int getGpaCategory()
+	        {
+	        	//GPA Categories
+	    		double one = 1.499; //under 1.5
+	    		double two = 1.5; //1.5 - 1.9 
+	    		double three = 2.0; //2.0 - 2.4 
+	    		double four = 2.5; //2.5 - 2.9 
+	    		double five = 3.0; //3.0 - 3.4 
+	    		double six = 3.5; //3.5 - 4.0 
+	        	
+	        	if (getGpa() < six) {
+	        		if (getGpa() < five) {
+	        			if (getGpa() < four) {
+	        				if (getGpa() < three) {
+	        					if (getGpa() < two) {
+	        						return 1;
+	        					}
+	        					else { return 2; }
+	        				}
+	        				else { return 3; }
+	        			}
+	        			else { return 4; }
+	        		}
+	        		else { return 5; }
+	        	}
+	        	else { return 6; }
+	        }
+	        
 	        //   ========================  DISPLAY METHOD  ====================        
 	    	public void display() {
 	    		System.out.println("ID\t\t= " + getId());

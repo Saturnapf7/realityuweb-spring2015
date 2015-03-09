@@ -22,5 +22,24 @@ public class SurveyTest {
 				instance.getVehicle() + instance.getChildSupport() + instance.getCreditScore() + instance.getSave() + instance.getEntertainment();
 		assertEquals(expResult, result);
 	}
+	
+	/**
+	 * Test method for {@link obj.Survey.getGpaCategory()}.
+	 */
+	//GPA Categories
+	// 1 = under 1.5, 2 = 1.5 - 1.9 
+	// 3 = 2.0 - 2.4,  4 = 2.5 - 2.9 
+	// 5 = 3.0 - 3.4, 6 = 3.5 - 4.0 
+	@Test
+	public void testGpaCategory() {
+		Survey s1 = new Survey();
+		int gpaCat = 0;
+		int expectedCat = 5;
+		
+		s1.setGpa(3.00d);
+		gpaCat = s1.getGpaCategory();
+		
+		assertEquals(expectedCat, gpaCat);
+	}
 
 }
