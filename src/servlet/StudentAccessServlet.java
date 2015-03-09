@@ -19,6 +19,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.annotation.WebServlet;
 
 import obj.Group;
+import dao.CoordinatorDAO;
 import dao.GroupsDAO;
 import obj.Survey;
 import dao.SurveysDAO;
@@ -30,6 +31,12 @@ import dao.SurveysDAO;
  * matches, the survey has already been completed and they cannot edit -> go to message page.
  * If name/dob doesn't match, they go to Survey page. 
  * If Student Access Code is invalid, they go to invalid login page.
+ * 
+ * Validate student information (first name, last name, date of birth) and access code.
+ * If student information is not found in database, sent to invalid login page.
+ * If access code doesn't match, sent to invalid login page.
+ * If gender value exists, sent to survey already completed page.
+ * If student information matches, access code matches, and gender value doesn't exist, sent to survey page.
  */
 @WebServlet("/StudentAccessServlet")
 public class StudentAccessServlet extends HttpServlet {
@@ -60,6 +67,7 @@ public class StudentAccessServlet extends HttpServlet {
         Survey s1 = null; //reset survey session object so doesn't use previous survey info on new form
         String surveyMsg = null; //Reset to null for new form so msg doesn't show up      
         String studentId = ""; //For holding the survey/student ID
+        String genderCheck = ""; //For seeing if the survey was filled out
         
         try {
             //Read in Form Data & Cleanup
@@ -86,6 +94,10 @@ public class StudentAccessServlet extends HttpServlet {
                 SurveysDAO surv1 = new SurveysDAO();
                 System.out.println("Created SurveysDAO obj.");
                 
+                //Create CoordinatorDAO object for checking survey completeness
+                CoordinatorDAO cDao = new CoordinatorDAO();
+                System.out.println("Created CoordinatorDAO obj.");
+                
                 //Search for matches by DOB (date of birth)
                 //Returns List of Surveys matching search criteria
                 /*lstSurvey = surv1.search("dob", DofB);
@@ -100,10 +112,8 @@ public class StudentAccessServlet extends HttpServlet {
                 
                 studentId = surv1.findStudentID(firstName, lastName, DofB);
         		if (!studentId.equals("0")) {
-        			lstSurvey = surv1.search("id", studentId);
-        			surv = lstSurvey.get(0);
-        			lstGrp = gd.search("id", Integer.toString(surv.getGroupID()));
-        			grp = lstGrp.get(0);
+        			surv = surv1.find(Integer.parseInt(studentId));
+        			grp = gd.find(surv.getGroupID());
         			
         			System.out.println(firstName + "::::" + surv.getFname());
         			System.out.println(lastName + "::::" + surv.getLname());
@@ -111,26 +121,35 @@ public class StudentAccessServlet extends HttpServlet {
         			System.out.println(studentAccesscode + "::::" + grp.getStudentAccessCode());
         			
         			if (studentAccesscode.equals(grp.getStudentAccessCode())) {
-        				//Valid Login - No dob match, so student has not completed a Survey
-                	
-        				//Put Group Obj and Strings for Last Name & DOB in Session
-        				grp = lstGrp.get(0); //First and only obj in list is index 0
-        				System.out.println("Extracted Group obj from List.");
-        				HttpSession ses1 = request.getSession();
-        				ses1.setAttribute("grp", grp);
-        				ses1.setAttribute("firstName", newfName);
-        				ses1.setAttribute("lastName", newlName);
-        				ses1.setAttribute("DofB", DofB);
-        				ses1.setAttribute("s1", s1); //Reset to null for new form
-        				ses1.setAttribute("surveyMsg", surveyMsg); //Reset to null for new form
-        				System.out.println("Group: "+grp.getName()+", Last Name: "+lastName+" & DOB: "+DofB+" added to Session.");
-        				System.out.println("surveyMsg: "+ surveyMsg);
-        				grp.display();
+        				genderCheck = cDao.findinfo(studentId);
+        				
+        				if (!genderCheck.equals("Male") && !genderCheck.equals("Female")) {
+        					//Put Group Obj and Strings for Last Name & DOB in Session
+            				//grp = lstGrp.get(0); //First and only obj in list is index 0
+            				System.out.println("Extracted Group obj from List.");
+            				HttpSession ses1 = request.getSession();
+            				ses1.setAttribute("grp", grp);
+            				ses1.setAttribute("firstName", newfName);
+            				ses1.setAttribute("lastName", newlName);
+            				ses1.setAttribute("DofB", DofB);
+            				ses1.setAttribute("s1", s1); //Reset to null for new form
+            				ses1.setAttribute("surveyMsg", surveyMsg); //Reset to null for new form
+            				System.out.println("Group: "+grp.getName()+", Last Name: "+lastName+" & DOB: "+DofB+" added to Session.");
+            				System.out.println("surveyMsg: "+ surveyMsg);
+            				grp.display();
 
-        				//Forward to Survey page 
-        				RequestDispatcher rd = getServletContext().getRequestDispatcher("/survey.jsp");
-        				rd.forward(request, response);
-        				System.out.println("Yay! Valid Student Access.");
+            				//Forward to Survey page 
+            				RequestDispatcher rd = getServletContext().getRequestDispatcher("/survey.jsp");
+            				rd.forward(request, response);
+            				System.out.println("Yay! Valid Student Access.");
+        				}
+        				
+        				else {
+                			//Student has already filled out survey - Forward to Student No Access Page
+                			RequestDispatcher rd = getServletContext().getRequestDispatcher("/studentNoAccess.jsp");
+                			rd.forward(request, response);
+                			System.out.println("ERROR! Student has already filled out survey.");
+                		}//End if
         			}
         			
             		else {
@@ -143,7 +162,7 @@ public class StudentAccessServlet extends HttpServlet {
                 } 
                 
         		else {
-        			//Access Code invalid - Forward to Error Page
+        			//Student information invalid - Forward to Error Page
         			RequestDispatcher rd = getServletContext().getRequestDispatcher("/invalidLogin.jsp");
         			rd.forward(request, response);
         			System.out.println("ERROR! Survey/Student ID not found.");

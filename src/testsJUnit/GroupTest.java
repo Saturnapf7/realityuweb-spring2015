@@ -37,11 +37,11 @@ public class GroupTest {
 	@Test
 	public void testGroup2() {
 		System.out.println("Test Group constructor: with Student Access Code");
-		String expResult = "0abcdefghij";
-		Group instance = new Group(0, "a", "b", "c", "d", "e", "f", "g", "h", "i", "j");
+		String expResult = "0abcdefghijkl";
+		Group instance = new Group(0, "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l");
 		String result = instance.getId() + instance.getName() + instance.getCreated() + instance.getModified() + instance.getHighschool() +
 				 instance.getTeacher() + instance.getClassPeriod() + instance.getSurveyStartDate() + instance.getSurveyEndDate() + 
-				 instance.getEventDate() + instance.getStudentAccessCode();
+				 instance.getEventDate() + instance.getStudentAccessCode() + instance.getmarriageChoice() + instance.getcoordinatorCode();
 		assertEquals(expResult, result);
 	}
 	
