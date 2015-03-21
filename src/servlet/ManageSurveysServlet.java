@@ -4,7 +4,6 @@ package servlet;
  *  4/19/2014
  ********************************************************************/
 import java.io.IOException;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,9 +96,30 @@ public class ManageSurveysServlet extends HttpServlet {
     			ses1.setAttribute("editGroupMsg", msg); //name Msg differently
     			System.out.println("Group & List of Surveys added to Session for 'opengroup.jsp'.");
 
-    			//Forward to page
+    			/*//Forward to page
     			RequestDispatcher rd = getServletContext().getRequestDispatcher("/opengroup.jsp");
-    			rd.forward(request, response);
+    			rd.forward(request, response);*/
+    			
+    			//Finding out where this servlet is called from sending user to correct page
+                String referUrl = request.getHeader("Referer");
+    			String[] splitUrl = referUrl.split("/");
+    			String sentFromPage = splitUrl[splitUrl.length-1];
+    			System.out.println(sentFromPage);
+                
+    			//Admin
+    			if (sentFromPage.equals("opengroup.jsp") || sentFromPage.equals("NewGroupServlet")) {
+    				//Forward confirmation page
+    	            RequestDispatcher rd = getServletContext().getRequestDispatcher("/opengroup.jsp");
+    	            rd.forward(request, response);
+    	            System.out.println("***** GONE TO ADMIN *****");
+    			}
+    			//Coordinator
+                if (sentFromPage.equals("CoordinatorOpenGroup.jsp") || sentFromPage.equals("CoordinatorOpenGroup") || sentFromPage.equals("CoordinatorGroupServlet")) {
+                	//Forward confirmation page
+    	            RequestDispatcher rd = getServletContext().getRequestDispatcher("/CoordinatorOpenGroup.jsp");
+    	            rd.forward(request, response);
+    	            System.out.println("***** GONE TO COORDINATOR *****");
+                }
     			System.out.println("Go to Survey Deleted confirmation page.");
 
     		} else if (request.getParameter("view") != null || request.getParameter("processed") != null) {
