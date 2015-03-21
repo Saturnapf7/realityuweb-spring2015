@@ -319,46 +319,19 @@ if (session.getAttribute("Category") != null) {
 <div id="wrapper">
  
 <!--HEADER-->
-<div id="header">
 
-<img id="logoImg" src="images/cislogo.png" width="200" height="150" alt="Communities In Schools Logo">
+<div id="header"><jsp:include page="HeaderTemp.jsp"/></div>
 
-
-<!--Header Text-->
-<img id="headerText" src="images/realityuhead.png" width="600" height="80" alt="Reality University Program">
-<!--REALITY U LOGO-->
-<img id="logoImg2" src="images/realityulogo.png" width="100" height="95" alt="Reality U Logo">
-
-<!--NAVIGATION-->
-<div id="nav" class="noprint">
-  <ul>
-  	<li><a href="index.jsp">Home</a></li>
-	
-<!--	
-	<li><a href="adminhome.html">Admin Home</a></li>
-	<li><a href="newgroup.html">New Group</a></li>
-    <li><a href="opengroup.html">Open Group</a></li>
-	<li><a href="editoccups.html">Edit Occupations</a></li>
--->
-	
-    <li><a href="helpstudent.html">Help</a></li>
-  </ul>
-</div><!--END NAVIGATION-->
-
-
-</div><!--END HEADER-->
-
-
-
+<!--END HEADER-->
 
 <!--MAIN CONTENT CONTAINER -->
 <div id="main">
 
 <br><br class="noprint">
 
-<fieldset>
-<h3>Student Survey <span class="eventDate">&mdash; Reality U Event Date: <%=grp.getEventDate()%></span></h3>
-</fieldset>
+<div id="title">
+<h2>Student Survey <span class="eventDate">&mdash; Reality U Event Date: <%=grp.getEventDate()%></span></h2>
+</div>
 
 <br><br class="noprint">
 
@@ -457,7 +430,7 @@ if (session.getAttribute("s1") == null) {
 				<option value="On-The-Job Training">On-The-Job Training</option>
 				<option value="Community College">Community College</option>
 				<option value="Technical School">Technical School</option>
-				<option value="Some College, Bachelors Degree">Some College, Bachelor's Degree</option>
+				<option value="Some College, Bachelor's Degree">Some College, Bachelor's Degree</option>
 				<option value="College + Graduate School">College + Graduate School</option>			
 			</select> 
 		</div>		

@@ -1,0 +1,46 @@
+@CHARSET "ISO-8859-1";
+
+/*==================WRAPPER===================*/
+#wrapper {
+	width: 100%;
+	min-width: 925px; /*Header wraps at less*/
+	margin: 0 auto; /*center*/
+	background-color: #112360; /*blue #1e3583*/
+
+	/*For sticking Footer to bottom of page*/
+	min-height: 100%;
+	
+		/*Min-height hack for IE6*/
+		height: auto !important;
+		height: 100%; /*wouldn't work with just 'min-height'*/
+		
+	margin-bottom: -32px; /*height of footer + footer border ht*/
+/*border: 1px solid orange;*/
+}
+
+
+/*==================HEADER AREA===================*/
+#header {
+	background: #339999 url('../images/multibar.png') repeat-x;
+	height: 160px;
+	border-bottom: 2px solid #e68002; /*orange*/
+}
+
+#logoImg {
+	float: left;
+	margin-top: 10px;
+		/*position: absolute;
+		left: 137px;*/
+
+}
+/*Reality U Header*/
+#headerText {
+	position: absolute;
+	padding-top: 50px;
+}
+/*Reality U Logo*/
+#logoImg2 {
+	position: absolute;
+	padding-top: 40px;
+	padding-left: 610px;
+}

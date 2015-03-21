@@ -110,43 +110,14 @@ obj.Group newGrp =(obj.Group)session.getAttribute("newGrp");
 <body>
 <div id="wrapper">
  
-<!--HEADER-->
-<div id="header">
-
-<img id="logoImg" src="images/cislogo.png" width="200" height="150" alt="Communities In Schools Logo">
-
-
-<!--Header Text-->
-<img id="headerText" src="images/realityuhead.png" width="600" height="80" alt="Reality University Program">
-<!--REALITY U LOGO-->
-<img id="logoImnewGrp" src="images/realityulogo.png" width="100" height="95" alt="Reality U Logo">
-
-<!--NAVIGATION-->
-<div id="nav">
-  <ul>
-  	<li><a href="index.jsp">Home</a></li>
-	<li><a href="adminhome.jsp">Admin Home</a></li>
-	<li><a href="coordinatorlist.jsp">View Coordinators</a></li>
-	<li><a href="regis.jsp">Admin Registration</a></li>
-	<li><a href="occupations.jsp">Edit Occupations</a></li>
-    <li><a href="helpadmin.html">Help</a></li>
-  </ul>
-</div><!--END NAVIGATION-->
-
-
-</div><!--END HEADER-->
-
-
-
+<div id="header"><jsp:include page="HeaderTemp.jsp"/></div><!--END HEADER-->
 
 <!--MAIN CONTENT CONTAINER -->
 <div id="main">
 
-<br><br>
-
-<fieldset>
-<h3>Admininstration - Add To Existing Group</h3>
-</fieldset>
+<div id="title">
+<h2>Admininstration - Add To Existing Group</h2>
+</div>
 
 
 
@@ -157,8 +128,8 @@ obj.Group newGrp =(obj.Group)session.getAttribute("newGrp");
 <!--START FORM-->
 <form id="newGroupForm" method="post" action="http://localhost:8080/RealityUWeb/AddGroupServlet" onSubmit="return validate(this);">
 
-<fieldset>
-<br><br>
+<div class="NewGroupDiv">
+	<div class="GroupContainer">
 
 <% 
 //If form never been filled in yet, all values are blank
@@ -419,7 +390,8 @@ if (session.getAttribute("newGrp") == null) {
 <% } //end if %>
 
 
-</fieldset>
+	</div>
+</div>
 
 <br>
 

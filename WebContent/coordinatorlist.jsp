@@ -73,43 +73,17 @@ displayGroups = gd.diplayGroups();
 
 <body>
 <div id="wrapper">
+
+<div id="header"><jsp:include page="HeaderTemp.jsp"/></div><!--END HEADER-->
  
-<!--HEADER-->
-<div id="header">
-
-<img id="logoImg" src="images/cislogo.png" width="200" height="150" alt="Communities In Schools Logo">
-
-
-<!--Header Text-->
-<img id="headerText" src="images/realityuhead.png" width="600" height="80" alt="Reality University Program">
-<!--REALITY U LOGO-->
-<img id="logoImg2" src="images/realityulogo.png" width="100" height="95" alt="Reality U Logo">
-
-<!--NAVIGATION-->
-<div id="nav">
-  <ul>
-  	<li><a href="index.jsp">Home</a></li>
-	<li><a href="adminhome.jsp">Admin Home</a></li>
-	<li><a href="coordinatorlist.jsp">View Coordinators</a></li>
-	<li><a href="regis.jsp">Admin Registration</a></li>
-	<li><a href="occupations.jsp">Edit Occupations</a></li>
-    <li><a href="helpadmin.html">Help</a></li>
-  </ul>
-</div><!--END NAVIGATION-->
-
-
-</div><!--END HEADER-->
-
-
 
 <!--MAIN CONTENT CONTAINER -->
 <div id="main">
 
-<br><br>
 
-<fieldset>
-<h3>Coordinator List</h3>
-</fieldset>
+<div id="title">
+<h2>Coordinator List</h2>
+</div>
 
 
 
@@ -123,38 +97,34 @@ its saved to a css i wanted to keep     -->
 <form id="newGroupForm">
 
 <fieldset>
-<br><br>
 
 <div class="FixedHeightContainer">
 <div class="Content">
-<br>
-<br>
+
   
 <%for (int i = 0; i < lstGroups.size(); i++)
 { %>               
 <table>
 <tr>
 <td><label for="school">High School:</label></td>
-<td><div style="overflow:visible"><input style="width:10000%" name="school" type="text" value = "<% out.println(lstGroups.get(i).getHighschool());%>"></div></td>
+<td><div style="overflow:hidden"><input style="width:125px" name="school" type="text" value = "<% out.println(lstGroups.get(i).getHighschool());%>"></div></td>
 <td><label for="input2">Teacher:</label></td>
-<td><div style="overflow:visible"><input style="width:10000%"  name="teacher" type="text" value = "<%  out.println(""+lstGroups.get(i).getTeacher());%>"></div></td>
-<td><label for="input3">Event Date</label></td>
-<td><div style="overflow:visible"><input style="width:10000%"  name="date" type="text" value = "<% out.println(""+lstGroups.get(i).getEventDate()); %>"></div></td>
+<td><div style="overflow:hidden"><input style="width:125px"  name="teacher" type="text" value = <%  out.println(""+lstGroups.get(i).getTeacher());%>></div></td>
+<td><label for="input3">Event Date:</label></td>
+<td><div style="overflow:hidden"><input style="width:125px"  name="date" type="text" value = <% out.println(""+lstGroups.get(i).getEventDate()); %>></div></td>
 <td><label for="input4">Group Name:</label></td>
-<td><div style="overflow:visible"><input style="width:10000%" name="gName" type="text" value = "<% out.println(lstGroups.get(i).getName()); %>"></div></td>
+<td><div style="overflow:hidden"><input style="width:125px" name="gName" type="text" value = <% out.println(lstGroups.get(i).getName()); %>></div></td>
 <td><label for="input4">Login:</label></td>
-<td><div style="overflow:visible"><input style="width:10000%" name="login" type="text" value = "<% out.println(lstGroups.get(i).getStudentAccessCode()); %>"></div></td>
+<td><div style="overflow:hidden"><input style="width:125px" name="login" type="text" value = <% out.println(lstGroups.get(i).getStudentAccessCode()); %>></div></td>
 <td><label for="input4">Password:</label></td>
-<td><div style="overflow:visible"><input style="width:10000%" name="password" type="text" value = "<% out.println(lstGroups.get(i).getcoordinatorCode()); %>"></div></td>
+<td><div style="overflow:hidden"><input style="width:125px" name="password" type="text" value = <% out.println(lstGroups.get(i).getcoordinatorCode()); %>></div></td>
 </tr>
 </table>
-<br>
-<br>
+
 <%}%>
 
 </div>
-<br>
-<br>
+
 </div>
 
 </fieldset>
@@ -168,6 +138,8 @@ its saved to a css i wanted to keep     -->
 		  </div>
 		</div>
 </form>
+<br>
+<br>
 
 </div><!--END mainArea-->
 

@@ -18,6 +18,7 @@ body {
 	color: #000000; /*black*/
 	font-family: Arial, sans-serif;
 	font-size: 1.0em;
+	line-height:30px;
 	
 	
 		/*background-color: #112360;*/ /*blue #1e3583*/
@@ -32,7 +33,9 @@ h3 {
 }
 h3.blackHead {
 	color: #000000; /*black*/
+	padding-bottom: 20px;
 }
+
 h3.blackHeadCenter {
 	color: #000000; /*black*/
 	text-align: center;
@@ -44,10 +47,14 @@ h2 {
 	line-height: 2em;
 	color: #ffffff;
 	padding-left: 3px;
+	padding-bottom: 10px;
+	padding-top:10px;
 } 
 
 p {
 	padding: 5px;
+	line-height:30px;
+	font-size: 16px;
 }
 
 /*=================GENERAL LINKS=================*/
@@ -69,10 +76,12 @@ button, input {
 }
 
 fieldset {
-	width: 80%;
-	border: 2px solid #33cccc; /*aqua*/
-	color: #33cccc; /*aqua*/
-	margin: 0 auto; /*center*/	
+	width: 1100px;
+	border: 4px solid #e68002; /*orange*/
+	color: #000000; /*black*/
+	margin: 0 auto; /*center*/
+	background-color: #e6e6e6; /*light grey*/
+	padding: 15px;
 	
 	/*Rounded Corners*/
 	-webkit-border-radius: 5px;
@@ -80,25 +89,13 @@ fieldset {
 	border-radius: 5px;	
 }
 
-label{
-    display: inline-block;
-    float: left;
-    clear: left;
-    /*width: 125px;*/
-    text-align: right;
-}
-input {
-	display: inline-block;
-	float: left;
-	margin-bottom: 5px;
-	width: 150px;
-}
+
 
 
 /*==================WRAPPER===================*/
 #wrapper {
 	width: 100%;
-	min-width: 925px; /*Header wraps at less*/
+	min-width: 1200px; /*Header wraps at less*/
 	margin: 0 auto; /*center*/
 	background-color: #112360; /*blue #1e3583*/
 
@@ -116,22 +113,42 @@ input {
 
 /*==================HEADER AREA===================*/
 #header {
-	background: #339999 url('../images/multibar.png') repeat-x;
-	height: 160px;
-	border-bottom: 2px solid #e68002; /*orange*/
+	background: #ffffff url('../images/multibar.png') repeat-x;
+	height: 180px;
+	border-bottom: 2px solid #1e3583; /*blue*/
 }
 
+
+.cis_container {
+	width: 300px;
+	border-right: 2px solid;
+	border-color: #1e3583;
+}
+
+
+.header_container {
+	width: 1100px;
+
+}
+
+
 #logoImg {
-	float: left;
+	float: right;
 	margin-top: 10px;
+	margin-bottom: 10px;
 		/*position: absolute;
 		left: 137px;*/
 
 }
 /*Reality U Header*/
 #headerText {
+	padding-top: 15px;
 	position: absolute;
-	padding-top: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
 }
 /*Reality U Logo*/
 #logoImg2 {
@@ -197,16 +214,25 @@ input {
 
 
 /*==================MAIN CONTENT AREA===================*/
+#title{
+	text-align: center;
+	font-size: 35px;
+	border-color: #e68002;
+    border-image: none;
+    border-style: none none solid;
+    border-width: 0 0 5px;
+}
+
 #main {
 	/* Padding between main content and footer*/
-	padding-bottom: 10px;	
+	padding-bottom: 25px;	
 	/*Let height auto size, don't need to specify*/
 }
 
 /*==================HOME/INDEX PAGE===================*/
 #loginArea {
 
-	width: 80%;
+	width: 70%;
 	margin: 0 auto; /*center*/	
 	
 	/*border: 1px solid red;*/
@@ -225,22 +251,15 @@ td {
 #box1, #box2, #box3 {
 	/*For aligning buttons to bottom of box*/
 	position: relative;
-
-	/* IE8 FIX:
-	NOTE: if change height, must change shadow backgrd image
-	height of actual image file to be the same height for <IE8 fix.
-	class=addPad on jsp on Form element adds padding back 
-	cuz must take away from box due to border shows where padding was*/
 	height: 350px;
 	padding: 5px;
-	width: 80%;
+	width: 90%;
 	
 	/*Rounded Corners*/
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	
-	background-image: url('../images/gradientshadow210.png');
 	background-repeat: no-repeat;
 	background-position: center;
 		
@@ -251,7 +270,7 @@ td {
         -o-background-size: 100% 100%;
         background-size: 100% 100%;	
 		/*background-size: cover;  - change all to "cover" if want that*/	
-		
+	
 /*		
 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradientshadow.png',sizingMethod='scale');
 -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradientshadow.png',sizingMethod='scale')";
@@ -259,17 +278,17 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 }
 
 #box1 {
-	border-top: 10px solid #33cccc; /*aqua*/
-	background-color: #e68002; /*orange*/
+	border-top: 10px solid #ca0026; /*red*/
+	background-color: #ffffff; /*white*/
 }
 #box2 {
-	border-top: 10px solid #1e3583; /*blue*/
-	background-color: #33cccc; /*aqua*/
+	border-top: 10px solid #e68002; /*orange*/
+	background-color: #ffffff; /*white*/
 
 }
 #box3 {
-	border-top: 10px solid #e68002; /*orange*/
-	background-color: #3b68ff; /*lt blue*/
+	border-top: 10px solid #01793b; /*green*/
+	background-color: #ffffff; /*white*/
 	/*background-color: #01793b;*/ /*green*/
 }
 
@@ -277,24 +296,27 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 #regisBoxText {
 	padding: 0;
 	margin-bottom: -20px;
-	font-size: 13px;
-	line-height: 14px;
+	font-size: 16px;
+	line-height: 16px;
 }
 
 /*To align all student & admin labels & input boxes*/
 .studentInputs input, .adminInputs input {
-	font-size: 14px;
+	font-size: 16px;
 	height: 14px;
+	line-height: 16px;
 }
 .studentInputs label {
 	width: 140px;
-	font-size: 14px;
+	font-size: 16px;
 	text-align: left;
+	line-height: 16px;
 }
 .adminInputs label {
-	width: 65px;
-	font-size: 14px;
+	width: 180px;
+	font-size: 16px;
 	text-align: left;
+	line-height: 16px;
 }
 
 /*Align buttons to bottom of box*/
@@ -305,18 +327,25 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 	width: 100%;
 	height: 25px;
 	padding-top: 5px;
+	padding-bottom: 5px;
 }
 /*Diff color border*/
 .bottomAlign {
 	border-top: 1px outset #e68002;
+	background-color: #ca0026; /*red*/
+	border-radius: 5px;
 }
 /*Diff color border*/
 .bottomAlign2 {
 	border-top: 1px outset #33cccc;
+	background-color: #e68002; /*orange*/
+	border-radius: 5px;
 }
 /*Diff color border - Register Button*/
 .bottomAlign3 {
 	border-top: 1px outset #1e3583;
+	background-color: #01793b; /*green*/
+	border-radius: 5px;
 }
 
 #regButton {
@@ -368,12 +397,6 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 #mainArea #box1, #mainArea #box2, #mainArea #box3, #mainArea #box4 {
 	/*For aligning buttons to bottom of box*/
 	position: relative;
-
-	/* IE8 FIX:
-	NOTE: if change height, must change shadow backgrd image
-	height of actual image file to be the same height for <IE8 fix.
-	class=addPad on jsp on <h3> element adds padding back 
-	cuz must take away from box due to border shows where padding was*/
 	height: 300px;
 	padding: 5px;
 	width: 80%;
@@ -383,7 +406,6 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	
-	background-image: url('../images/gradientshadow300.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	
@@ -403,22 +425,21 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 }
 
 #mainArea #box1 {
-	border-top: 10px solid #33cccc; /*aqua*/
-	background-color: #e68002; /*orange*/
+	border-top: 10px solid #ca0026; /*red*/
+	background-color: #ffffff; /*white*/
 }
 #mainArea #box2 {
-	border-top: 10px solid #1e3583; /*blue*/
-	background-color: #33cccc; /*aqua*/
+	border-top: 10px solid #e68002; /*orange*/
+	background-color: #ffffff; /*white*/
 
 }
 #mainArea #box3 {
-	border-top: 10px solid #e68002; /*orange*/
-	background-color: #01793b; /*green*/
+	border-top: 10px solid #01793b; /*green*/
+	background-color: #ffffff; /*white*/
 }
 #mainArea #box4 {
-	border-top: 10px solid #01793b; /*green*/
-	background-color: #3b68ff; /*lt blue*/
-	/*#ca0026 red*/
+	border-top: 10px solid #3b68ff; /*light blue*/
+	background-color: #ffffff; /*white*/
 }
 
 .icon {
@@ -436,7 +457,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 	left: 0;
 	width: 100%;
 	height: 50px;
-	padding-top: 10px;
+    padding-top: 3px;
 }
 /*Diff color border*/
 #mainArea .bottomAlign {
@@ -453,6 +474,8 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 /*Diff color border*/
 #mainArea .bottomAlign4 {
 	border-top: 1px outset #1e3583;
+	background-color: #1e3583;
+	border-radius: 5px;
 }
 
 #adminButton {
@@ -486,37 +509,49 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 	font-size: 0.75em;
 }
 
-#surveyForm label, #newGroupForm label {
+#surveyForm label{
+    clear: left;
     display: inline-block;
+    float: left;
+    line-height: 2.5em;
+    padding-left: 25px;
+    text-align: left;
+    width: 105px;
+}
+
+#newGroupForm label {
+	display: inline-block;
     float: left;
     clear: left;
     width: 210px;
     text-align: right;
 	padding-right: 5px;
-	line-height: 1.25em;
+	line-height: 2.5em;
+	overflow:hidden;
+	
 }
 #surveyForm input, #surveyForm select, #newGroupForm input, #newGroupForm select {
 	display: inline-block;
 	float: left;
 	margin-bottom: 5px;
 	width: 225px;
-	line-height: 1.25em;
-	color: #ffffff;
+	line-height: 2.5em;
+	color: #000000;
 	background-color: transparent;
 	border: 0;
-	border-bottom: 2px dotted #33cccc;
+	border-bottom: 2px solid #1e3583;
 
 }
 #newGroupForm select{
 	display: inline-block;
 	float: left;
-	margin-bottom:5px;
+	margin-top:10px;
 	width:60px;
-	line=height:1.25em;
+	line-height:2.5em;
 	color=#ffffff;
 	background-color:transparent;
 	border:0;
-	border-bottom: 2px dotted #33cccc;
+	border-bottom: 2px solid #1e3583;
 		
 }
 #surveyForm option, #newGroupForm option {
@@ -527,12 +562,6 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 #surveyForm div {
 	font-size: .90em;
 	line-height: 1.25em;
-}
-/*Larger Bottom Padding for New Group Page*/
-#newGroupForm div {
-	font-size: .90em;
-	line-height: 1.25em;
-	padding-bottom: 50px;
 }
 
 /*RADIO BUTTONS*/
@@ -554,19 +583,6 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 #surveyForm  div.clearFloat {
 	clear: both;
 }
-#newGroupForm div.sameLine select{
-	display: inline-block;
-	float: left;
-	margin-bottom: 5px;
-	width: 150px;
-	line-height: 1.25em;
-	color: #ffffff;
-	background-color: transparent;
-	border: 0;
-	border-bottom: 2px dotted #33cccc;
-		
-}
-
 
 /*SURVEY 'SPENDING SECTION' DIFFERENT FORMATTING*/
 #spendingSection label {
@@ -581,7 +597,8 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 /*FORM BUTTONS*/
 #surveyForm #formButtonsContainer, #newGroupForm #formButtonsContainer {
 	margin: 0 auto;
-	width: 80%;		
+	width: 80%;	
+	padding-bottom: 10px;	
 }
 #surveyForm #formButtons {
 	width: 450px; /*3 buttons width Survey Page*/
@@ -589,15 +606,16 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 }
 #newGroupForm #formButtons {
 	width: 300px; /*2 buttons width New Group Page*/
-	margin: 0 auto;	
+	margin: 0 auto;
+	padding-bottom: 10px;
 }
 #surveyForm #submit, #surveyForm #clear, #surveyForm #print, #newGroupForm #submit, #newGroupForm #clear {
 	width: 150px;
 	font-size: 16px;
-	color: #ffffff;
+	color: #e68002;
 	background-color: transparent;
 	border: 0;
-	border-bottom: 5px solid #e68002;
+	border-bottom: 5px solid #ca0026;
 
 }
 #surveyForm #clear, #newGroupForm #clear {
@@ -617,7 +635,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 	color: #e68002;
 	margin-left: 80px;
 	margin-bottom: -25px;	
-	border: 1px solid #33cccc;
+	border: 3px solid #1e3583;
 }
 
 
@@ -627,6 +645,7 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 	margin-left: 80px;
 	margin-top: -10px;
 	margin-bottom: 5px;	
+	color: #1e3583;
 }
 
 
@@ -643,6 +662,12 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
 .leftPadding {
 	padding-left: 125px;
 }
+
+.leftPadding10 {
+    padding-left: 10px;	
+	
+}
+
 /*SPLIT MAIN FIELDSET INTO 2 EQUAL COLS*/
 table#openGroupTable {
 	width: 100%;	
@@ -653,7 +678,7 @@ table#openGroupTable {
 /*border: 1px solid yellow;*/
 }
 #openGroupTable label {
-	width: 150px;
+	width: 190px;
 }
 
 /*OPEN GROUP PAGE - STUDENT SURVEY FIELDSET BOX*/
@@ -716,11 +741,13 @@ fieldset#groupSurveyBox {
 	width: 95%;
 	height: 600px;
 	overflow: auto;
+	background-color: #e6e6e6; /*light grey*/
 }
 #manageOccupsForm table {
 	width: 95%;
 	margin: 0 auto; /*center*/
 	font-size: 11px;
+	color: #ffffff;
 }
 #manageOccupsForm th {
 	color: #e68002;
@@ -799,10 +826,11 @@ fieldset#groupSurveyBox {
 
 #footer {
 	clear: both;
-	background-color: #339999; /*aqua-gray*/
+	background-color: #1e3583; /*blue*/
 	width: 100%;
+	min-width: 1200px;
 	
-	border-top: 7px solid #e68002; /*orange*/
+	border-top: 8px solid #e68002; /*orange*/
 	/*Have to set explicit height for Sticky Footer*/
 	height: 25px;
 
@@ -857,19 +885,44 @@ img {
 	padding-left: 75px;
 	padding-right: 75px;	
 }
-.FixedHeightContainer
-{
 
-  height: 400px;
-  width:100%; 
-  padding:1px; 
-}
 .Content
 {
 
   height:400px;
-   overflow:auto;
+  overflow:auto;
 
+}
+.NewGroupDiv
+{
+
+   height:100%;
+   overflow:hidden;
+   background-color: #e6e6e6;
+   border: 4px solid #e68002;
+   border-radius: 5px;
+   color: #000000;
+   margin: 0 auto;
+   padding: 30px 15px;
+   width: 800px;
+  
+}
+
+.RosterDiv
+{
+	background-color: #e6e6e6;
+    border: 4px solid #e68002;
+    border-radius: 5px;
+    color: #000000;
+    margin: 0 auto;
+    padding: 15px;
+    width: 100%;
+	
+}
+
+.GroupContainer
+{
+	margin-left: 125px;
 }
 .capfirstletter {
  display: inline-block;

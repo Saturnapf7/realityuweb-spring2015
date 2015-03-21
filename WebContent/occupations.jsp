@@ -109,44 +109,19 @@ ses1.setAttribute("surveyProcMsg", mssg);
 <div id="wrapper">
  
 <!--HEADER-->
-<div id="header">
 
-<img id="logoImg" src="images/cislogo.png" width="200" height="150" alt="Communities In Schools Logo">
+<div id="header"><jsp:include page="HeaderTemp.jsp"/></div>
 
-
-<!--Header Text-->
-<img id="headerText" src="images/realityuhead.png" width="600" height="80" alt="Reality University Program">
-<!--REALITY U LOGO-->
-<img id="logoImg2" src="images/realityulogo.png" width="100" height="95" alt="Reality U Logo">
-
-<!--NAVIGATION-->
-<div id="nav">
-  <ul>
-  	<li><a href="index.jsp">Home</a></li>
-	<li><a href="adminhome.jsp">Admin Home</a></li>
-	<li><a href="newgroup.jsp">New Group</a></li>
-    <li><a href="opengroup.jsp">Open Group</a></li>
-	<li><a href="occupations.jsp">Edit Occupations</a></li>
-    <li><a href="helpadmin.html">Help</a></li>
-  </ul>
-</div><!--END NAVIGATION-->
-
-
-</div><!--END HEADER-->
-
-
-
+<!--END HEADER-->
 
 <!--MAIN CONTENT CONTAINER -->
 <div id="main">
 
-<br><br>
 
-<fieldset>
-<h3>Edit Occupations</h3>
-</fieldset>
+<div id="title">
+<h2>Edit Occupations</h2>
+</div>
 
-<br><br>
 
 <div id="mainArea">
 <br>
@@ -156,7 +131,7 @@ ses1.setAttribute("surveyProcMsg", mssg);
 <form id="manageOccupsForm" method="post" action="http://localhost:8080/RealityUWeb/EditOccupationServlet" onSubmit="return checkFunction(this);">
 
 <fieldset>
-<br><br>
+
 
 
 <%
@@ -172,7 +147,7 @@ ses1.setAttribute("surveyProcMsg", mssg);
 
 
  	<table>
- 			<tr>
+ 			<tr style="line-height: 16px;">
 	                <th>ID</th>
 	                <th>Occupation Name</th>
 	                <th>Type</th>
@@ -191,8 +166,8 @@ ses1.setAttribute("surveyProcMsg", mssg);
 	                <th>Edit</th>
 	                <th>Delete</th>
                 
-            </tr>       
-
+            </tr>    
+            
  		<%	
  				String bgColor = "";
                 //Loop thru list of all ArrayList for list of all Occupations

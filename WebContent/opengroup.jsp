@@ -163,44 +163,18 @@ if (session.getAttribute("isProcessed") != null) {
 <div id="wrapper">
  
 <!--HEADER-->
-<div id="header">
 
-<img id="logoImg" src="images/cislogo.png" width="200" height="150" alt="Communities In Schools Logo">
+<div id="header"><jsp:include page="HeaderTemp.jsp"/></div>
 
-
-<!--Header Text-->
-<img id="headerText" src="images/realityuhead.png" width="600" height="80" alt="Reality University Program">
-<!--REALITY U LOGO-->
-<img id="logoImg2" src="images/realityulogo.png" width="100" height="95" alt="Reality U Logo">
-
-<!--NAVIGATION-->
-<div id="nav">
-  <ul>
-  	<li><a href="index.jsp">Home</a></li>	
-	<li><a href="adminhome.jsp">Admin Home</a></li>
-	<li><a href="newgroup.jsp">New Group</a></li>
-    <li><a href="opengroup.jsp">Open Group</a></li>
-	<li><a href="occupations.jsp">Edit Occupations</a></li>
-    <li><a href="helpadmin.html">Help</a></li>
-  </ul>
-</div><!--END NAVIGATION-->
-
-
-</div><!--END HEADER-->
-
-
-
+<!--END HEADER-->
 
 <!--MAIN CONTENT CONTAINER -->
 <div id="main">
 
-<br><br>
 
-<fieldset>
-<h3>Administration - Open Group</h3>
-</fieldset>
-
-
+<div id="title">
+<h2>Administration - Open Group</h2>
+</div>
 
 <br><br>
 
@@ -336,15 +310,14 @@ if (session.getAttribute("isProcessed") != null) {
 	<!-- Submit pageID so know which page came from -->
 	<input type="hidden" name="pageID" value="opengroup">
 <!--SUBMIT FORM BUTTONS-->
-	<div id="formButtonsContainer" class="leftPadding">			
+	<div id="formButtonsContainer" class="leftPadding10">			
 		<% 
 		//If not a dupe Group Name, and a Group has been initially selected to view/edit, show "Edit Group" button
 		//Key: id -1=dupe group name (when Edited Group)
 		if (session.getAttribute("openGrp") != null) {
 		%>
 			<input type="submit" value="Edit Group" id="submit" name="editGroup">
-			</br>
-			</br>		
+		
 			 <a href = "http://localhost:8080/RealityUWeb/SurveyDownload"><input type="button" id = "submit" value ="Download Surveys"></a>
 			 <input type="hidden" name="groupID" value="<%=openGrp.getId()%>">
 		<% } else { //if a Group not selected yet, disable the button %>

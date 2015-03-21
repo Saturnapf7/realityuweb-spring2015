@@ -86,44 +86,16 @@ ses1.setAttribute("surveyProcMsg", mssg);
 <div id="wrapper">
  
 <!--HEADER-->
-<div id="header">
 
-<img id="logoImg" src="images/cislogo.png" width="200" height="150" alt="Communities In Schools Logo">
-
-
-<!--Header Text-->
-<img id="headerText" src="images/realityuhead.png" width="600" height="80" alt="Reality University Program">
-<!--REALITY U LOGO-->
-<img id="logoImg2" src="images/realityulogo.png" width="100" height="95" alt="Reality U Logo">
-
-<!--NAVIGATION-->
-<div id="nav">
-  <ul>
-  	<li><a href="index.jsp">Home</a></li>
-	<li><a href="adminhome.jsp">Admin Home</a></li>
-	<li><a href="coordinatorlist.jsp">View Coordinators</a></li>
-	<li><a href="regis.jsp">Admin Registration</a></li>
-	<li><a href="occupations.jsp">Edit Occupations</a></li>
-    <li><a href="helpadmin.html">Help</a></li>
-  </ul>
-</div><!--END NAVIGATION-->
-
-
-</div><!--END HEADER-->
-
-
-
+<div id="header"><jsp:include page="HeaderTemp.jsp"/></div><!--END HEADER-->
 
 <!--MAIN CONTENT CONTAINER -->
 <div id="main">
 
-<br><br>
 
-<fieldset>
-<h3>Administration</h3>
-</fieldset>
-
-
+<div id="title">
+<h2>Administration</h2>
+</div>
 
 <br><br>
 
@@ -140,7 +112,6 @@ ses1.setAttribute("surveyProcMsg", mssg);
 					<br>
 				<div class="bottomAlign">
 					<a id="adminButton" href="newgroup.jsp">New Group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>>&nbsp;&nbsp;</a>
-					<a id="adminButton" href="AddGroup.jsp">Add Group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>>&nbsp;&nbsp;</a>  
 				</div>
 			</div>
 		</td>
@@ -199,7 +170,7 @@ ses1.setAttribute("surveyProcMsg", mssg);
 
 <!--FOOTER OUTSIDE WRAPPER-->
 <div id="footer" class="legal">
-Copyright &copy; 2009-2014 CIS of Marietta/Cobb County
+Copyright &copy; 2009-2015 CIS of Marietta/Cobb County
 </div><!--END FOOTER-->
 
 

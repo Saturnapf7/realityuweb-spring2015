@@ -73,43 +73,16 @@ displayGroups = gd.diplayGroups();
 
 <body>
 <div id="wrapper">
+
+ <div id="header"><jsp:include page="HeaderTemp.jsp"/></div><!--END HEADER-->
  
-<!--HEADER-->
-<div id="header">
-
-<img id="logoImg" src="images/cislogo.png" width="200" height="150" alt="Communities In Schools Logo">
-
-
-<!--Header Text-->
-<img id="headerText" src="images/realityuhead.png" width="600" height="80" alt="Reality University Program">
-<!--REALITY U LOGO-->
-<img id="logoImg2" src="images/realityulogo.png" width="100" height="95" alt="Reality U Logo">
-
-<!--NAVIGATION-->
-<div id="nav">
-  <ul>
-  	<li><a href="index.jsp">Home</a></li>
-	<li><a href="adminhome.jsp">Admin Home</a></li>
-	<li><a href="coordinatorlist.jsp">View Coordinators</a></li>
-	<li><a href="regis.jsp">Admin Registration</a></li>
-	<li><a href="occupations.jsp">Edit Occupations</a></li>
-    <li><a href="helpadmin.html">Help</a></li>
-  </ul>
-</div><!--END NAVIGATION-->
-
-
-</div><!--END HEADER-->
-
-
-
 <!--MAIN CONTENT CONTAINER -->
 <div id="main">
 
-<br><br>
 
-<fieldset>
-<h3>Delete Group</h3>
-</fieldset>
+<div id="title">
+<h2>Delete Group</h2>
+</div>
 
 
 
@@ -123,12 +96,11 @@ its saved to a css i wanted to keep     -->
 <form id="newGroupForm" name= "deletegroup">
 
 <fieldset>
-<br><br>
+
 <div class = goleft>
 <div class="FixedHeightContainer">
 <div class="Content">
-<br>
-<br>
+
 
 <%int count = 1; %>
 <%GroupsDAO deletegroup = new GroupsDAO(); %>
@@ -139,28 +111,26 @@ its saved to a css i wanted to keep     -->
 <table align="left";>	 	
 		<tr>
 		<% i++; %>
-		<td><label for="input3">Event Expired</label></td>
-		<td><div style="overflow:visible"><input style="width:10000%"  name="date" type="text" value = <% out.println(lstGroups.get(i)); %>></div></td>
+		<td><label for="input3">Event Expired:</label></td>
+		<td><div style="overflow:hidden"><input style="width:125px"  name="date" type="text" value = <% out.println(lstGroups.get(i)); %>></div></td>
 		<% i++; %>
 		<td><label for="school">High School:</label></td>
-		<td><div style="overflow:visible"><input style="width:10000%" name="school" type="text" value = "<% out.println(lstGroups.get(i));%>"></div></td>
+		<td><div style="overflow:hidden"><input style="width:125px" name="school" type="text" value = "<% out.println(lstGroups.get(i));%>"></div></td>
 		<% i++; %>
 		<td><label for="input2">Teacher:</label></td>
-		<td><div style="overflow:visible"><input style="width:10000%"  name="teacher" type="text" value = <%  out.println(lstGroups.get(i));%>></div></td>
+		<td><div style="overflow:hidden"><input style="width:125px"  name="teacher" type="text" value = <%  out.println(lstGroups.get(i));%>></div></td>
 		<% i++; %>
-		<td><label for="input3">Class Period</label></td>
-		<td><div style="overflow:visible"><input style="width:10000%"  name="date" type="text" value = <% out.println(lstGroups.get(i)); %>></div></td>
+		<td><label for="input3">Class Period:</label></td>
+		<td><div style="overflow:hidden"><input style="width:125px"  name="date" type="text" value = <% out.println(lstGroups.get(i)); %>></div></td>
 	</tr>
 	
 </table>
-<br>
-<br>
+
  
 <%}%>
 
 </div>
-<br>
-<br>
+
 </div>
 </div>
 </fieldset>
@@ -171,6 +141,7 @@ its saved to a css i wanted to keep     -->
 				<a href = "http://localhost:8080/RealityUWeb/DeleteAllExpiredSurvlet"><input type="button" value="Delete All Groups" id="submit" name="deleteAll" onclick="btn='submit';"></a>
 		  </div>
 		</div>
+<br><br>		
 </form>
 
 </div><!--END mainArea-->

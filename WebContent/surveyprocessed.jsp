@@ -305,42 +305,19 @@ SurveysDAO sd = new SurveysDAO();
 <div id="wrapper">
  
 <!--HEADER-->
-<div id="header">
 
-<img id="logoImg" src="images/cislogo.png" width="200" height="150" alt="Communities In Schools Logo">
+<div id="header"><jsp:include page="HeaderTemp.jsp"/></div>
 
-
-<!--Header Text-->
-<img id="headerText" src="images/realityuhead.png" width="600" height="80" alt="Reality University Program">
-<!--REALITY U LOGO-->
-<img id="logoImg2" src="images/realityulogo.png" width="100" height="95" alt="Reality U Logo">
-
-<!--NAVIGATION-->
-<div id="nav" class="noprint">
-  <ul>
-  	<li><a href="index.jsp">Home</a></li>	
-	<li><a href="adminhome.jsp">Admin Home</a></li>
-	<li><a href="newgroup.jsp">New Group</a></li>
-    <li><a href="opengroup.jsp">Open Group</a></li>
-	<li><a href="editoccups.jsp">Edit Occupations</a></li>
-    <li><a href="helpadmin.html">Help</a></li>
-  </ul>
-</div><!--END NAVIGATION-->
-
-
-</div><!--END HEADER-->
-
-
-
+<!--END HEADER-->
 
 <!--MAIN CONTENT CONTAINER -->
 <div id="main">
 
 <br><br class="noprint">
 
-<fieldset>
-<h3>Reality U Survey Results <span class="eventDateShow">&mdash; Reality U Event Date: <%=grp.getEventDate()%></span></h3>
-</fieldset>
+<div id="title">
+<h2>Reality U Survey Results <span class="eventDateShow">&mdash; Reality U Event Date: <%=grp.getEventDate()%></span></h2>
+</div>
 
 <br><br class="noprint">
 

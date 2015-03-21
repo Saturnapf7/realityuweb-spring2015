@@ -116,43 +116,18 @@ obj.Group newGrp =(obj.Group)session.getAttribute("newGrp");
 <div id="wrapper">
  
 <!--HEADER-->
-<div id="header">
 
-<img id="logoImg" src="images/cislogo.png" width="200" height="150" alt="Communities In Schools Logo">
+<div id="header"><jsp:include page="HeaderTemp.jsp"/></div>
 
-
-<!--Header Text-->
-<img id="headerText" src="images/realityuhead.png" width="600" height="80" alt="Reality University Program">
-<!--REALITY U LOGO-->
-<img id="logoImnewGrp" src="images/realityulogo.png" width="100" height="95" alt="Reality U Logo">
-
-<!--NAVIGATION-->
-<div id="nav">
-  <ul>
-  	<li><a href="index.jsp">Home</a></li>	
-	<li><a href="adminhome.jsp">Admin Home</a></li>
-	<li><a href="newgroup.jsp">New Group</a></li>
-    <li><a href="opengroup.jsp">Open Group</a></li>
-	<li><a href="occupations.jsp">Edit Occupations</a></li>
-    <li><a href="helpadmin.html">Help</a></li>
-  </ul>
-</div><!--END NAVIGATION-->
-
-
-</div><!--END HEADER-->
-
-
-
+<!--END HEADER-->
 
 <!--MAIN CONTENT CONTAINER -->
 <div id="main">
 
-<br><br>
 
-<fieldset>
-<h3>Admininstration - Add New Group</h3>
-</fieldset>
-
+<div id="title">
+<h2>Admininstration - Add New Group</h2>
+</div>
 
 
 <br><br>
@@ -162,29 +137,28 @@ obj.Group newGrp =(obj.Group)session.getAttribute("newGrp");
 <!--START FORM-->
 <form id="newGroupForm" method="post" action="http://localhost:8080/RealityUWeb/NewGroupServlet" onSubmit="return validate(this);">
 
-<fieldset>
-<br><br>
-<div class="FixedHeightContainer">
-<div class="Content">
+
+<div class="NewGroupDiv">
+	<div class="GroupContainer">
 <% 
 //If form never been filled in yet, all values are blank
 if (session.getAttribute("newGrp") == null) {
 %>
 	<div>
 		<label for="name">Group Name:</label>	
-		<input style="width:10%" type="text" name="name" value="">
+		<input style="width:30%" type="text" name="name" value="">
 	</div>
 	<div>
 		<label for="highschool">High School:</label>
-		<input style="width:10%" type="text" name="highschool" value="">
+		<input style="width:30%" type="text" name="highschool" value="">
 	</div>
 	<div>
 		<label for="teacher">Teacher:</label>
-		<input style="width:10%" type="text" name="teacher" value="">
+		<input style="width:30%" type="text" name="teacher" value="">
 	</div>
 	<div>
 		<label for="classPeriod">Period:</label>
-		<input style="width:10%" type="text" name="classPeriod" value="">
+		<input style="width:30%" type="text" name="classPeriod" value="">
 		
 			
 	</div>
@@ -230,9 +204,6 @@ if (session.getAttribute("newGrp") == null) {
 		year++;
 	} %>
 </select>
-<br>
-<br>
-<br>
 	
 	<label for=Drop-Top>Survey Exipire Date:</label>
 	<select name=seMonth>
@@ -275,11 +246,7 @@ if (session.getAttribute("newGrp") == null) {
 		year2++;
 	} %>
 </select>
-	<br>
-	<br>
-	<br>
-	
-	
+
 	<label for=Drop-Top>Event Date:</label>
 	<select name=edMonth>
 		<option value="Month">Month</option>
@@ -324,12 +291,12 @@ if (session.getAttribute("newGrp") == null) {
 	<div>
 		<label for="studentAccessCode">Student Access Code:</label>
 		
-		<input style="width:10%" type="text" name="studentAccessCode" value="(Auto-Generated)" readonly>
+		<input style="width:30%" type="text" name="studentAccessCode" value="(Auto-Generated)" readonly>
 	</div>
 	<div>
 		<label for="coordinatorCode">Coordinator Access Code:</label>
 		
-		<input style="width:10%" type="text" name="coordinatorCode" value="(Auto-Generated)" readonly>
+		<input style="width:30%" type="text" name="coordinatorCode" value="(Auto-Generated)" readonly>
 	</div>
 	
 	<!--========================================-->
@@ -339,28 +306,16 @@ if (session.getAttribute("newGrp") == null) {
 	<!--========================================-->
 	<div>
 		<label>Marriages?</label>
-		</br>				
+					
 		<label>Yes:</label><input type = "radio" name = "choice" value = yes checked="checked">
 		<label>	No:</label><input type = "radio" name = "choice" value = no>
 	</div>
 		<!--    end of josh's code       -->
+	
 
-</div>
-</div>
+
 <%
-//If form filled in and checked on server but not valid: have dupe
-//Group Name, fill in with previous values with error message
-} else { 
-
-
-
-                    //String obj 'newGroupMsg' created in NewGroupServlet
-                    //Display msg only if new group data submitted
-                    if (session.getAttribute("newGroupMsg") != null) {
-                        HttpSession ses = request.getSession();
-                        String msg = (String)ses.getAttribute("newGroupMsg");
-                        out.println("<h2 id='newGroupMsg'>"+msg+"</h2>");                  
-                    } //end if              
+} else {                   
 %> 
 
 	<div>
@@ -408,14 +363,14 @@ if (session.getAttribute("newGrp") == null) {
 		<%
 			if(newGrp.getmarriageChoice() .equals("yes")){%>
 		<label>Marriages?</label>
-		</br>				
+					
 		<label>Yes:</label><input type = "radio" name = "choice" value = yes checked="checked">
 		<label>	No:</label><input type = "radio" name = "choice" value = no>
 		<% }%>
 		<%
 			if(newGrp.getmarriageChoice() .equals("no")){%>	
 			<label>Marriages?</label>
-		</br>				
+					
 		<label>Yes:</label><input type = "radio" name = "choice" value = yes>
 		<label>	No:</label><input type = "radio" name = "choice" value = no checked="checked">
 		<%}%>	
@@ -429,7 +384,6 @@ if (session.getAttribute("newGrp") == null) {
 		//Key: id 0=dupe group name (New Group), id -1=dupe group name (Editd Group) 
 		if (newGrp.getId() > 0) { 
 		%>
-		<span class="inputErrorMsg">THIS IS THE GROUP'S STUDENT ACCESS CODE:</span><br><br>
 		<% } //end if %>
 		
 		<label for="studentAccessCode">Student Access Code:</label>
@@ -440,18 +394,17 @@ if (session.getAttribute("newGrp") == null) {
 		<%
 		//ADDED IN THE COORDINATORS PASSWORD ========JOSH
 			 %>
-		<span class="inputErrorMsg">THIS IS THE GROUP'S COORDINATORS PASS CODE:</span><br><br>
 		<label for="coordinatorCode">Coordinator Access Code:</label>
 		<input type="text" name="coordinatorCode" value="<%=newGrp.getcoordinatorCode()%>" readonly>
 	</div>
 	
 <% } //end if %>
+	</div>
+</div>
 
-
-</fieldset>
 
 <br>
-
+<!-- *********************************************************************************************************** -->
 <!--SUBMIT FORM BUTTONS-->
 		<div id="formButtonsContainer">
 		  <div id="formButtons">
@@ -470,7 +423,8 @@ if (session.getAttribute("newGrp") == null) {
 		  </div>
 		</div>
 
-<br><br>
+<br>
+
 
 <!--END FORM-->
 </form>
@@ -491,7 +445,7 @@ if (session.getAttribute("newGrp") == null) {
 
 <!--FOOTER OUTSIDE WRAPPER-->
 <div id="footer" class="legal">
-Copyright &copy; 2009-2014 CIS of Marietta/Cobb County
+Copyright &copy; 2009-2015 CIS of Marietta/Cobb County
 </div><!--END FOOTER-->
 
 

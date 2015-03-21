@@ -114,40 +114,15 @@ obj.Group newGrp =(obj.Group)session.getAttribute("newGrp");
 <body>
 <div id="wrapper">
  
-<!--HEADER-->
-<div id="header">
-
-<img id="logoImg" src="images/cislogo.png" width="200" height="150" alt="Communities In Schools Logo">
-
-
-<!--Header Text-->
-<img id="headerText" src="images/realityuhead.png" width="600" height="80" alt="Reality University Program">
-<!--REALITY U LOGO-->
-<img id="logoImg2" src="images/realityulogo.png" width="100" height="95" alt="Reality U Logo">
-
-<!--NAVIGATION-->
-<div id="nav">
-  <ul>
-  	<li><a href="index.jsp">Home</a></li>	
-    <li><a href="helpadmin.html">Help</a></li>
-  </ul>
-</div><!--END NAVIGATION-->
-
-
-</div><!--END HEADER-->
-
-
+<div id="header"><jsp:include page="HeaderTemp.jsp"/></div><!--END HEADER-->
 
 <!--MAIN CONTENT CONTAINER -->
 <div id="main">
 
-<br><br>
 
-<fieldset>
-<h3>Student Roster</h3>
-</fieldset>
-
-
+<div id="title">
+<h2>Student Roster</h2>
+</div>
 
 <br><br>
 
@@ -156,8 +131,7 @@ obj.Group newGrp =(obj.Group)session.getAttribute("newGrp");
 <!--START FORM-->
 <form id="newGroupForm" method="post" action="http://localhost:8080/RealityUWeb/RosterServlet" onSubmit="return validate(this);">
 
-<fieldset>
-<br><br>
+<div class="RosterDiv">
 
 <% 
 //If form never been filled in yet, all values are blank
@@ -166,33 +140,32 @@ if (session.getAttribute("newGrp") == null) {
 <div class="FixedHeightContainer">
 <div class="Content">
 <span class="capfirstletter">
+
+<table align = "left">
+<tr>
+<td><label for="F">FirstName:</label></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
+<td><label for="input2">LastName:</label></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
+<td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
+<td><label for="input4">GPA:</label></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
+</tr>
+</table>
+<br>
 <br>
 <br>
 <table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input1" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input2" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input3" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input4" type="text"></td>
-</tr>
-</table>
-<br>
-<br>
-<br>
-<table align = "left">
-<tr>
-<td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input5" type="text"></td>
-<td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input6" type="text"></td>
-<td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input7" type="date"></td>
-<td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input8" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -200,13 +173,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input9" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input10" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input11" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input12" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -214,13 +187,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input13" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input14" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input15" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input16" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -228,13 +201,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input17" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input18" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input19" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input20" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -242,13 +215,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input21" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input22" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input23" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input24" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -256,13 +229,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input25" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input26" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input27" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input28" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -270,13 +243,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input29" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input30" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input31" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input32" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -284,13 +257,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input33" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input34" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input35" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input36" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -298,13 +271,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input37" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input38" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input39" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input40" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -312,13 +285,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input41" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input42" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input43" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input44" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -326,13 +299,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input45" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input46" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input47" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input48" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -340,13 +313,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input49" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input50" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input51" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input52" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -354,13 +327,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input53" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input54" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input55" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input56" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -368,13 +341,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input57" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input58" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input59" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input60" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -382,13 +355,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input61" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input62" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input63" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input64" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -396,13 +369,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input65" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input66" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input67" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input68" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -410,13 +383,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input69" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input70" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input71" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input72" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -424,13 +397,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input73" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input74" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input75" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input76" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -438,13 +411,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input77" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input78" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input79" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input80" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -452,13 +425,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input81" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input82" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input83" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input84" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -466,13 +439,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input85" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input86" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input87" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input88" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -480,13 +453,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input89" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input90" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input91" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input92" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -494,13 +467,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input93" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input94" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input95" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input96" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -508,13 +481,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input97" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input98" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input99" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input1000" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -522,13 +495,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input101" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input102" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input103" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input104" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -536,13 +509,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input105" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input106" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input107" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input108" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -550,13 +523,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input109" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input110" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input111" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input112" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -564,13 +537,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input113" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input114" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input115" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input116" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -578,13 +551,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input117" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input118" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input119" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input120" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -592,13 +565,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input121" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input122" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input123" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input124" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -606,13 +579,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input125" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input126" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input127" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input128" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -620,13 +593,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input129" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input130" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input131" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input132" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -634,13 +607,13 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input133" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input134" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input135" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input136" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -648,27 +621,27 @@ if (session.getAttribute("newGrp") == null) {
 <br><table align = "left">
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input137" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input138" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input139" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input140" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
 <br>
-<br><table align = "left">
+<br><table>
 <tr>
 <td><label for="F">FirstName:</label></td>
-<td><input style="width:10000%" id="input1" name="input141" type="text"></td>
+<td><input style="width:125px" id="input1" name="input1" type="text"></td>
 <td><label for="input2">LastName:</label></td>
-<td><input style="width:10000%" id="input2" name="input142" type="text"></td>
+<td><input style="width:125px" id="input2" name="input2" type="text"></td>
 <td><label for="input3">DOB:(mm/dd/yyyy)</label></td>
-<td><input style="width:100%" id="input3" name="input143" type="date"></td>
+<td><input style="width:125px" id="input3" name="input3" type="date"></td>
 <td><label for="input4">GPA:</label></td>
-<td><input style="width:3000%" id="input4" name="input144" type="text"></td>
+<td><input style="width:125px" id="input4" name="input4" type="text"></td>
 </tr>
 </table>
 <br>
@@ -778,7 +751,7 @@ if (session.getAttribute("newGrp") == null) {
 <% } //end if %>
 
 
-</fieldset>
+</div>
 
 <br>
 

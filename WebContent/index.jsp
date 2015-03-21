@@ -123,29 +123,12 @@ ses1.setAttribute("surveyMssg", msg);
 
 <body>
 <div id="wrapper">
- 
+
 <!--HEADER-->
-<div id="header">
 
-<img id="logoImg" src="images/cislogo.png" width="200" height="150" alt="Communities In Schools Logo">
+<div id="header"><jsp:include page="HeaderTemp.jsp"/></div>
 
-
-<!--Header Text-->
-<img id="headerText" src="images/realityuhead.png" width="600" height="80" alt="Reality University Program">
-<!--REALITY U LOGO-->
-<img id="logoImg2" src="images/realityulogo.png" width="100" height="95" alt="Reality U Logo">
-
-
-<!--NAVIGATION-->
-<div id="nav">
-		<!--ADD NAVIGATION -->
-</div><!--END NAVIGATION-->
-
-
-</div><!--END HEADER-->
-
-
-
+<!--END HEADER-->
 
 <!--MAIN CONTENT CONTAINER -->
 <div id="main">
@@ -183,7 +166,6 @@ Students must first fill out a survey, answering questions about what their expe
 			<div id="box1">
 				<form class="addPad" method="post" action="http://localhost:8080/RealityUWeb/StudentAccessServlet" onSubmit="return validateStudent(this);" style="height: 457px; width: 204px; ">
 				<h3 class="blackHead">Student Survey</h3>
-				<br>
 					<div class="adminInputs">
 						<label>Student Access Code:</label>
 						<input type="text" name="accesscode" >
@@ -195,8 +177,7 @@ Students must first fill out a survey, answering questions about what their expe
 		
 					<label>First Name:</label><input type="text" name="fname">
 					</div>
-					<br>
-					
+							
 					<div class="studentInputs">
 					<label>Last Name:</label>
 					<input type="text" name="lName" width=50px; ><br>
@@ -220,7 +201,6 @@ Students must first fill out a survey, answering questions about what their expe
 			<div id="box2">
 				<form class="addPad" method="post" action="http://localhost:8080/RealityUWeb/AdminLoginServlet" onSubmit="return validateAdmin(this);">
 				<h3 class="blackHead">Admin Login</h3>
-				<br><br>
 					<div class="adminInputs">
 						<label>Userid:</label>
 						<input type="text" name="userid">
@@ -239,12 +219,8 @@ Students must first fill out a survey, answering questions about what their expe
 		<td>
 			<div id="box3">
 				<form class="addPad" method="post" action="http://localhost:8080/RealityUWeb/CoordinatorLoginServlet" onSubmit="return validateAdmin(this);">
-				<h3 class="blackHead">Coordinator Login</h3>
-				<p id="regisBoxText">
-				<br>
-				Teacher and Coordinator portal.
-				</p>
-				<br><br>
+				<h3 class="blackHead">Teacher/Coordinator Login</h3>
+
 					<div class="adminInputs">
 						<label>User ID:</label>
 						<input type="text" name="userid">
