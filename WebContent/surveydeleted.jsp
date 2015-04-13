@@ -55,20 +55,15 @@
 <h2>Administration</h2>
 </div>
 
-
+<br><br>
 <div id="mainArea">
 
 
-<fieldset>
+
 
 	<h2 class="msgSpacing">
 		The Survey was deleted successfully.
 	</h2>
-	
-</fieldset>
-
-<br>
-
 
 
 </div><!--END mainArea-->

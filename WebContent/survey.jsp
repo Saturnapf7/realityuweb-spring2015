@@ -327,8 +327,6 @@ if (session.getAttribute("Category") != null) {
 <!--MAIN CONTENT CONTAINER -->
 <div id="main">
 
-<br><br class="noprint">
-
 <div id="title">
 <h2>Student Survey <span class="eventDate">&mdash; Reality U Event Date: <%=grp.getEventDate()%></span></h2>
 </div>

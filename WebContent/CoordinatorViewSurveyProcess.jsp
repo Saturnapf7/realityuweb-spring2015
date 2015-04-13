@@ -304,18 +304,14 @@ SurveysDAO sd = new SurveysDAO();
 <body>
 <div id="wrapper">
  
-<div id="header"><jsp:include page="HeaderTemp.jsp"/></div><!--END HEADER-->
 
 <!--MAIN CONTENT CONTAINER -->
 <div id="main">
 
-<br><br class="noprint">
 
 <div id="title">
 <h2>Reality U Survey Results <span class="eventDateShow">&mdash; Reality U Event Date: <%=grp.getEventDate()%></span></h2>
 </div>
-
-<br><br class="noprint">
 
 
 <div id="mainArea">
@@ -705,7 +701,6 @@ SurveysDAO sd = new SurveysDAO();
 		  </div>
 		</div>
 
-<br><br>
 
 <!--END FORM-->
 </form>
@@ -718,18 +713,11 @@ SurveysDAO sd = new SurveysDAO();
 
 </div><!--END Main-->
 
-
 <!--FOR STICKY FOOTER-->
 <div id="push"></div>
 
 
 </div><!--END Content Wrapper-->
-
-
-<!--FOOTER OUTSIDE WRAPPER-->
-<div id="footer" class="legal">
-Copyright &copy; 2009-2014 CIS of Marietta/Cobb County
-</div><!--END FOOTER-->
 
 
 </body>

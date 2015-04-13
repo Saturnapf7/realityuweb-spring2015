@@ -95,7 +95,8 @@ displayGroups = gd.diplayGroups();
 its saved to a css i wanted to keep     -->
 <form id="newGroupForm">
 
-<fieldset>
+<div class="CoordinatorDiv">
+	<div class="CoordinatorContainer">
 
 <div class="FixedHeightContainer">
 <div class="Content">
@@ -126,8 +127,8 @@ its saved to a css i wanted to keep     -->
 
 </div>
 
-</fieldset>
-
+</div>
+</div>
 <!--END FORM-->
 
 <div id="formButtonsContainer">

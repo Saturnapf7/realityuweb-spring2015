@@ -45,25 +45,19 @@
 <h2>Student Survey</h2>
 </div>
 
-
+<br><br>
 <div id="mainArea">
 
 
-<fieldset>
 
 
-	<h2 class="msgSpacing">
+
+	<h2 class="msgSpacing2">
 		Sorry you have already completed your survey, and cannot make changes at this time. 
         Please contact your teacher if you have an issue that needs to be addressed regarding your survey.
 	</h2>
 
 	
-</fieldset>
-
-<br>
-
-
-
 </div><!--END mainArea-->
 
 

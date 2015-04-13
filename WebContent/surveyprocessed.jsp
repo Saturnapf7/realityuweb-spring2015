@@ -308,23 +308,18 @@ SurveysDAO sd = new SurveysDAO();
 
 <div id="header"><jsp:include page="HeaderTemp.jsp"/></div>
 
+
 <!--END HEADER-->
 
 <!--MAIN CONTENT CONTAINER -->
 <div id="main">
 
-<br><br class="noprint">
-
 <div id="title">
 <h2>Reality U Survey Results <span class="eventDateShow">&mdash; Reality U Event Date: <%=grp.getEventDate()%></span></h2>
 </div>
 
-<br><br class="noprint">
-
-
+<br>
 <div id="mainArea">
-
-<br class="noprint"><br class="noprint">
 
 <!--START FORM-->
 <form id="surveyForm" method="post" action="http://localhost:8080/RealityUWeb/SubmitSurveyServlet" onSubmit="return validate(this);">
@@ -467,7 +462,7 @@ SurveysDAO sd = new SurveysDAO();
 		<br>
 		
 		<div>
-		<br>
+		<br><br><br>
 			<p class="horizPadding">In your student survey, you chose <span class="boldText"><%=surv.getPrefJob()%></span> as your preferred occupation. 
 			Based on your GPA, education level, and more, your job was assigned as:
 			</p>
@@ -709,8 +704,6 @@ SurveysDAO sd = new SurveysDAO();
 		  </div>
 		</div>
 
-<br><br>
-
 <!--END FORM-->
 </form>
 
@@ -728,13 +721,6 @@ SurveysDAO sd = new SurveysDAO();
 
 
 </div><!--END Content Wrapper-->
-
-
-<!--FOOTER OUTSIDE WRAPPER-->
-<div id="footer" class="legal">
-Copyright &copy; 2009-2014 CIS of Marietta/Cobb County
-</div><!--END FOOTER-->
-
 
 </body>
 </html>

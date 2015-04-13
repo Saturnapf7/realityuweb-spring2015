@@ -53,16 +53,11 @@
 <div id="mainArea">
 
 
-<fieldset>
+
 
 	<h2 class="msgSpacing">
 		Sorry. Your login is invalid. Please try again.
 	</h2>
-
-</fieldset>
-
-<br>
-
 
 
 </div><!--END mainArea-->

@@ -514,9 +514,9 @@ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gradie
     display: inline-block;
     float: left;
     line-height: 2.5em;
-    padding-left: 25px;
+    padding-left: 100px;
     text-align: left;
-    width: 105px;
+    width: 300px;
 }
 
 #newGroupForm label {
@@ -705,12 +705,12 @@ fieldset#groupSurveyBox {
 }
 
 #grpSurveyForm #formButtons {
-	width: 250px; /*~4 buttons width Survey Page*/
+	width: 275px; /*~4 buttons width Survey Page*/
 }
 #grpSurveyForm #view, #grpSurveyForm #print, #grpSurveyForm #delete, #grpSurveyForm #processed {
 	width: 60px;
 	font-size: 12px;
-	color: #ffffff;
+	color: #112360;
 	background-color: transparent;
 	border: 0;
 	border-bottom: 5px solid #e68002;	
@@ -721,7 +721,7 @@ fieldset#groupSurveyBox {
 	border-bottom: 5px solid #01793b;	
 }
 #grpSurveyForm #delete {
-	border-bottom: 5px solid #3b68ff;	
+	border-bottom: 5px solid #ca0026;	
 }
 #grpSurveyForm #processed {
 	border-bottom: 5px solid #33cccc;	
@@ -871,13 +871,18 @@ img {
 
 /*Used for formatting Invalid Login/Student Access Error Page Msgs*/
 .msgSpacing {
-	padding: 10px;
+	padding: 0px 0px 0px 575px;
+	line-height: 1em;
+}
+
+.msgSpacing2 {
+	padding: 0px 200px 0px 300px;
 	line-height: 1em;
 }
 
 /*Used for formatting Help Pages*/
 .helpFormat {
-	color: #ffffff;
+	color: #1e3583;
 	font-weight: bold;
 }
 
@@ -920,10 +925,30 @@ img {
 	
 }
 
+.RegisterDiv
+{
+
+   height:100%;
+   overflow:hidden;
+   background-color: #e6e6e6;
+   border: 4px solid #e68002;
+   border-radius: 5px;
+   color: #000000;
+   margin: 0 auto;
+   padding: 30px 15px;
+   width: 600px;
+  
+}
+
 .GroupContainer
 {
 	margin-left: 125px;
 }
+.GroupContainer2
+{
+	margin-left: 0px;
+}
+
 .capfirstletter {
  display: inline-block;
 }

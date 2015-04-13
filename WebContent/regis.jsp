@@ -93,14 +93,14 @@ obj.Administrator a2 =(obj.Administrator)session.getAttribute("adm2");
 <h2>Administration - Registration</h2>
 </div>
 
-
+<br><br>
 <div id="mainArea">
 
 <!--START FORM-->
 <form id="newGroupForm" method="post" action="http://localhost:8080/RealityUWeb/AdminRegisServlet" onSubmit="return validate(this);">
 
-<fieldset>
-<br><br>
+<div class="RegisterDiv">
+	<div class="GroupContainer2">
 
 <% 
 //If form never been filled in yet, all values are blank
@@ -169,7 +169,8 @@ if (session.getAttribute("adm2") == null) {
 <% } //end if %>
 
 
-</fieldset>
+</div>
+	</div>
 
 <br>
 
